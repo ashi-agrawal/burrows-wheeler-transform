@@ -37,12 +37,12 @@ def countConsecutive(s, graphname, imgname):
     plt.clf()
 
 def main():
-    for text in ['green_eggs_and_ham', 'const']:
+    for title, text in [('Green Eggs and Ham', 'green_eggs_and_ham'), ('Constitution', 'const')]:
         filename = './sample_texts/' + text + '.txt'
         S = loadText(filename)
-        countConsecutive(S, '%s pre-transform' % text, '%s_pre' % text)
+        countConsecutive(S, '%s pre-transform' % title, '%s_pre' % text)
         L = bwt(S)
-        countConsecutive(L, '%s post-transform' % text, '%s_post' % text)
+        countConsecutive(L, '%s post-transform' % title, '%s_post' % text)
 
 
 if __name__ == '__main__':
